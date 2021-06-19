@@ -1,7 +1,7 @@
 version: '3.3'
 services:
   activemq:
-    image: webcenter/activemq:latest
+    image: fogsyio/activemq:5.15.9
     cpu_count: 1
     cpu_percent: 15
     mem_limit: 256m
@@ -16,8 +16,8 @@ services:
       ACTIVEMQ_ADMIN_PASSWORD: password
       TZ: 'Australia/Melbourne'
     volumes:
-      - /data/activemq:/data/activemq
-      - /logs/activemq:/var/log/activemq
+      - ./data/activemq:/data/activemq
+      - ./logs/activemq:/var/log/activemq
   mysql:
     image: mysql:5.7
     cpu_count: 2
